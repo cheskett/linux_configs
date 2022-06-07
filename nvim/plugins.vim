@@ -39,16 +39,16 @@ if exists('+termguicolors')
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
   set termguicolors
-endif
-" if !has('gui_running')
+ endif
+"if !has('gui_running')
 "  set t_Co=256
 " endif
 " if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
   " screen does not (yet) support truecolor
- " set termguicolors
-"endif
-" set background=dark
-" let base16colorspace=256
+  "set termguicolors
+" endif
+set background=dark
+let base16colorspace=256
 colorscheme base16-atelier-dune
 
 syntax on
@@ -56,13 +56,13 @@ hi Normal ctermbg=NONE
 
 " Customize the highlight a bit.
 " Make comments more prominent -- they are important.
-call Base16hi("Comment", g:base16_gui09, "", g:base16_cterm09, "", "", "")
+" call Base16hi("Comment", g:base16_gui09, "", g:base16_cterm09, "", "", "")
 " Make it clearly visible which argument we're at.
-call Base16hi("LspSignatureActiveParameter", g:base16_gui05, g:base16_gui03, g:base16_cterm05, g:base16_cterm03, "bold", "")
+" call Base16hi("LspSignatureActiveParameter", g:base16_gui05, g:base16_gui03, g:base16_cterm05, g:base16_cterm03, "bold", "")
 " Would be nice to customize the highlighting of warnings and the like to make
 " them less glaring. But alas
 " https://github.com/nvim-lua/lsp_extensions.nvim/issues/21
-call Base16hi("CocHintSign", g:base16_gui03, "", g:base16_cterm03, "", "", "")
+" call Base16hi("CocHintSign", g:base16_gui03, "", g:base16_cterm03, "", "", "")
 
 " Lightline
 let g:lightline = {
@@ -119,6 +119,13 @@ tnoremap <C-k> <Esc>
 " Ctrl+h to stop searching
 vnoremap <C-h> :nohlsearch<cr>
 nnoremap <C-h> :nohlsearch<cr>
+
+
+
+
+" Ctrl+n to enable numbering
+vnoremap <C-n> :set nu!<cr>
+nnoremap <C-n> :set nu!<cr>
 
 " Suspend with Ctrl+f
 " inoremap <C-f> :sus<cr>
